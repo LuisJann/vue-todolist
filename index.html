@@ -23,7 +23,7 @@
 
             <div class="task-container">
                 <ul>
-                    <li v-for="(task, index) in todoItem" @click="checkedTask" :class="[task.done === false ? `text-line` : '']">{{task.text}}<span @click="deleteTask">&cross;</span></li>
+                    <li v-for="(task, index) in todoItem" @click="checkedTask" :class="[task.done === false ? `` : 'text-line']">{{task.text}}<span @click="deleteTask">&cross;</span></li>
                 </ul>
             </div>
         </main>
