@@ -18,7 +18,34 @@ const {createApp} = Vue;
 createApp({
     data(){
         return{
+            newTodoItem:[],
+            todoItem:[
+                {
+                    text:"Fare i compiti",
+                    done:false,
+                },
+                {
+                    text:"Passare dal supermercato",
+                    done:false,
+                },
+                {
+                    text:"Completare slider di Olga",
+                    done:false,
+                },
+            ]
 
+        }
+    },
+     methods:{
+        deleteTask(indexOfTasks){
+            //quando terminiamo tutti i task facciamo apparire una scritta
+            this.todoItem.splice(indexOfTasks, 1);
+            console.log(this.todoItem);
+        },
+        addNewTask(){
+            console.log(this.todoItem.text, "todo item");
+            this.todoItem.push({text:this.newTask});
+            this.newTask = "";
         }
     }
 }).mount("#app")

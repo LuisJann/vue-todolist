@@ -10,7 +10,26 @@
 </head>
 <body>
     
-    <div id="app"></div>
+    <div id="app" class="container">
+        <main>
+            <div class="container-title">
+                <h1> TO-DO LIST</h1>
+            </div>
+            <div class="new-task">
+                <label for="task-test">Nuova task</label>
+                <input type="text" id="task-test" placeholder="Inserisci la nuova task" v-model.trim="newTask" keyup.enter="addNewTask">
+                <button @click="addNewTask">Inserisci</button>
+            </div>
+
+            <div class="task-container">
+                <ul>
+                    <li v-for="(task, index) in todoItem" @click="" :class="task.done  ? `text-line`:``">{{task.text}}<span @click="deleteTask">&cross;</span></li>
+                </ul>
+            </div>
+        </main>
+
+
+    </div>
 
     <script src="js/script.js"></script>
 </body>
