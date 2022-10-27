@@ -44,7 +44,7 @@ createApp({
         },
         addNewTask(){
             console.log(this.todoItem.text, "todo item");
-            this.todoItem.push({text:this.newTask});
+            this.todoItem.push({text:this.newTask, done:false});
             this.newTask = "";
         }
     }

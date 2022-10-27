@@ -18,7 +18,7 @@
             <div class="new-task">
                 <label for="task-test">Nuova task</label>
                 <input type="text" id="task-test" placeholder="Inserisci la nuova task" v-model.trim="newTask" keyup.enter="addNewTask">
-                <button @click="addNewTask">Inserisci</button>
+                <button @click="addNewTask" @keyup-enter="addNewTask">Inserisci</button>
             </div>
 
             <div class="task-container">
