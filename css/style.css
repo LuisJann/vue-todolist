@@ -44,6 +44,12 @@
     margin-left: 10px;
     font-size: 1rem;
     font-weight: bold;
+    transition: .5s;
+}
+
+.new-task button:hover{
+    font-size: 1.5rem;
+    background-color: greenyellow;
 }
 
 .new-task input{
@@ -51,6 +57,8 @@
     border-radius: 10px;
     margin-left: 10px;
 }
+
+
 
 .task-container{
     width: 400px;
@@ -85,7 +93,7 @@
 span{
     color: black;
     font-size: 1.2rem;
-    transition: 1s;
+    transition: .5s;
 }
 
 span:hover{
