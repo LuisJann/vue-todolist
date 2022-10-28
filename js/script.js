@@ -18,7 +18,7 @@ const {createApp} = Vue;
 createApp({
     data(){
         return{
-            newTodoItem:[],
+            newTask:"",
             todoItem:[
                 {
                     text:"Fare i compiti",
@@ -38,7 +38,7 @@ createApp({
     },
      methods:{
         deleteTask(indexOfTasks){
-            //quando terminiamo tutti i task facciamo apparire una scritta
+            console.log(indexOfTasks);
             this.todoItem.splice(indexOfTasks, 1);
             console.log(this.todoItem);
         },
@@ -47,18 +47,9 @@ createApp({
             this.todoItem.push({text:this.newTask, done:false});
             this.newTask = "";
         },
-        checkedTask(){
+        checkedTask(indexOfTasks){
             console.log(this.todoItem.length);
-            for(let i=0; i < this.todoItem.length; i++ ){
-                console.log(this.todoItem[i]);
-                thisTask = this.todoItem[i];
-                console.log(thisTask.done);
-                if(thisTask.done === false){
-                    thisTask.done = true;
-                }else {
-                    thisTask.done = false;
-                }
-            }
+            this.todoItem[indexOfTasks].done = !this.todoItem[indexOfTasks].done;
         }
     }
 }).mount("#app")
